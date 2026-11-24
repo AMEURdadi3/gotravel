@@ -47,14 +47,9 @@ h1 em{font-style:normal;color:var(--red)}
 .hero-art{position:relative;height:460px}
 .pic{position:absolute;border-radius:24px;overflow:hidden;box-shadow:0 20px 50px -20px rgba(22,36,92,.45);display:flex;align-items:flex-end;padding:16px;color:#fff;font-weight:700}
 .pic span{background:rgba(0,0,0,.35);backdrop-filter:blur(6px);padding:4px 12px;border-radius:999px;font-size:14px}
-.p1{inset:0 0 120px 140px;background:linear-gradient(160deg,#58B7E8 0%,#1E6FB8 45%,#0E3D7A 100%)}
-.p1::before{content:"";position:absolute;bottom:0;left:0;right:0;height:55%;background:
-  radial-gradient(ellipse at 30% 100%,#0B2F5E 0 40%,transparent 41%),
-  linear-gradient(180deg,transparent,rgba(0,0,0,.25))}
-.p1::after{content:"";position:absolute;top:18%;right:22%;width:120px;height:120px;border-radius:50% 50% 0 0;background:#E9D9B8;box-shadow:-80px 40px 0 -20px #E2CFA6,60px 50px 0 -30px #E2CFA6}
-.p2{width:230px;height:250px;left:0;bottom:0;background:linear-gradient(170deg,#F7C873,#E68A3A 55%,#9B4A1E)}
-.p2::after{content:"";position:absolute;left:50%;top:30%;transform:translateX(-50%);border-left:70px solid transparent;border-right:70px solid transparent;border-bottom:90px solid #C98A45}
-.p3{width:190px;height:150px;right:20px;bottom:10px;background:linear-gradient(170deg,#7FE0C8,#0E8C8C)}
+.p1{inset:0 0 120px 140px;align-items:flex-start;background:url(img/istanbul.jpg) center/cover}
+.p2{width:230px;height:250px;left:0;bottom:0;background:url(img/sharm.jpg) center/cover}
+.p3{width:190px;height:150px;right:20px;bottom:10px;background:url(img/bali.jpg) center/cover;border:4px solid #fff}
 .pic span{position:relative;z-index:2}
 .badge-float{position:absolute;top:30px;left:60px;background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 12px 30px -12px rgba(0,0,0,.3);z-index:3;font-size:14px}
 .badge-float b{color:var(--red);font:700 20px "Readex Pro";display:block}
@@ -79,7 +74,7 @@ h2{font:900 36px/1.2 Cairo;color:var(--navy)}
 .offers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .offer{background:#fff;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
 .offer:hover{transform:translateY(-4px);box-shadow:0 24px 40px -24px rgba(22,36,92,.5)}
-.cover{height:170px;position:relative;padding:14px;display:flex;justify-content:space-between;align-items:flex-start}
+.cover{height:190px;background-size:cover;background-position:center;position:relative;padding:14px;display:flex;justify-content:space-between;align-items:flex-start}
 .cover .tag{background:#fff;color:var(--red)}
 .cover .left{background:var(--gold);color:#3b2600}
 .cover h3{position:absolute;bottom:12px;right:16px;color:#fff;font:900 28px Cairo;text-shadow:0 2px 12px rgba(0,0,0,.35)}
@@ -92,12 +87,12 @@ h2{font:900 36px/1.2 Cairo;color:var(--navy)}
 .price small{color:var(--mute);font-size:12px;display:block}
 .price b{font:700 22px "Readex Pro";color:var(--navy)}
 .price .btn{padding:10px 16px;font-size:14px}
-.c-ist{background:linear-gradient(150deg,#F2A65A,#C2452D 60%,#6B1E2E)}
-.c-shr{background:linear-gradient(150deg,#F7D58B,#E0A048 50%,#1A7A8C)}
-.c-mys{background:linear-gradient(150deg,#86D3F5,#2E7BC4 55%,#13306E)}
-.c-tun{background:linear-gradient(150deg,#BFE7FF,#3FA0D9 50%,#F2F2F2)}
-.c-bal{background:linear-gradient(150deg,#9BE15D,#1C8F6A 55%,#0D4A3E)}
-.c-dxb{background:linear-gradient(150deg,#FFD9A0,#D8894A 50%,#3A2C5C)}
+.c-ist{background-image:linear-gradient(180deg,rgba(0,0,0,.05) 40%,rgba(0,0,0,.55)),url(img/istanbul.jpg)}
+.c-shr{background-image:linear-gradient(180deg,rgba(0,0,0,.05) 40%,rgba(0,0,0,.55)),url(img/sharm.jpg)}
+.c-mys{background-image:linear-gradient(180deg,rgba(0,0,0,.05) 40%,rgba(0,0,0,.55)),url(img/malaysia.jpg)}
+.c-tun{background-image:linear-gradient(180deg,rgba(0,0,0,.05) 40%,rgba(0,0,0,.55)),url(img/tunis.jpg)}
+.c-bal{background-image:linear-gradient(180deg,rgba(0,0,0,.05) 40%,rgba(0,0,0,.55)),url(img/bali.jpg)}
+.c-dxb{background-image:linear-gradient(180deg,rgba(0,0,0,.05) 40%,rgba(0,0,0,.55)),url(img/dubai.jpg)}
 
 /* steps */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
