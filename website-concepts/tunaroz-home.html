@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TUNAROZ VOYAGE — concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Readex+Pro:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#D7262E; --red-d:#A9141B; --navy:#16245C; --navy-2:#24357F;
+  --sand:#FBF6EE; --sand-2:#F3EADB; --ink:#1A1D29; --mute:#5D6478; --line:#E6DCCB;
+  --sea:#0E8C8C; --gold:#E7A73A; --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Cairo,system-ui,sans-serif;background:var(--sand);color:var(--ink);font-size:17px;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:13px 22px;font:700 16px Cairo;cursor:pointer}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red-d)}
+.btn-ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
+.btn-wa{background:#1FAF55;color:#fff}
+.tag{display:inline-block;font:700 12px Cairo;padding:4px 10px;border-radius:999px}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(251,246,238,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:28px;height:72px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-mark{width:42px;height:42px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font:700 22px "Readex Pro"}
+.logo b{font:700 18px "Readex Pro";color:var(--navy);letter-spacing:.5px;display:block;line-height:1}
+.logo small{font-size:12px;color:var(--red);letter-spacing:2px}
+.nav ul{display:flex;gap:22px;list-style:none;font-weight:600;color:var(--navy)}
+.nav ul a:hover{color:var(--red)}
+.nav .end{margin-inline-start:auto;display:flex;gap:10px;align-items:center}
+.lang{font-weight:700;color:var(--mute);font-size:14px}
+
+/* hero */
+.hero{padding:56px 0 40px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.kicker{color:var(--red);font-weight:700;font-size:15px}
+h1{font:900 54px/1.15 Cairo;color:var(--navy);margin:10px 0 16px}
+h1 em{font-style:normal;color:var(--red)}
+.lead{color:var(--mute);font-size:19px;max-width:520px}
+.trust{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap}
+.trust div{font-size:14px;color:var(--mute)}
+.trust b{display:block;font:700 24px "Readex Pro";color:var(--navy)}
+.hero-art{position:relative;height:460px}
+.pic{position:absolute;border-radius:24px;overflow:hidden;box-shadow:0 20px 50px -20px rgba(22,36,92,.45);display:flex;align-items:flex-end;padding:16px;color:#fff;font-weight:700}
+.pic span{background:rgba(0,0,0,.35);backdrop-filter:blur(6px);padding:4px 12px;border-radius:999px;font-size:14px}
+.p1{inset:0 0 120px 140px;background:linear-gradient(160deg,#58B7E8 0%,#1E6FB8 45%,#0E3D7A 100%)}
+.p1::before{content:"";position:absolute;bottom:0;left:0;right:0;height:55%;background:
+  radial-gradient(ellipse at 30% 100%,#0B2F5E 0 40%,transparent 41%),
+  linear-gradient(180deg,transparent,rgba(0,0,0,.25))}
+.p1::after{content:"";position:absolute;top:18%;right:22%;width:120px;height:120px;border-radius:50% 50% 0 0;background:#E9D9B8;box-shadow:-80px 40px 0 -20px #E2CFA6,60px 50px 0 -30px #E2CFA6}
+.p2{width:230px;height:250px;left:0;bottom:0;background:linear-gradient(170deg,#F7C873,#E68A3A 55%,#9B4A1E)}
+.p2::after{content:"";position:absolute;left:50%;top:30%;transform:translateX(-50%);border-left:70px solid transparent;border-right:70px solid transparent;border-bottom:90px solid #C98A45}
+.p3{width:190px;height:150px;right:20px;bottom:10px;background:linear-gradient(170deg,#7FE0C8,#0E8C8C)}
+.pic span{position:relative;z-index:2}
+.badge-float{position:absolute;top:30px;left:60px;background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 12px 30px -12px rgba(0,0,0,.3);z-index:3;font-size:14px}
+.badge-float b{color:var(--red);font:700 20px "Readex Pro";display:block}
+
+/* search */
+.search{margin-top:34px;background:#fff;border-radius:22px;padding:10px;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:6px;box-shadow:0 20px 50px -25px rgba(22,36,92,.5);border:1px solid var(--line)}
+.field{padding:10px 16px;border-radius:14px}
+.field:hover{background:var(--sand)}
+.field label{display:block;font-size:12px;color:var(--mute);font-weight:700}
+.field select,.field input{border:0;background:transparent;font:600 16px Cairo;color:var(--ink);width:100%;outline:none}
+.search .btn{height:100%;border-radius:16px;padding:0 26px}
+
+/* sections */
+section{padding:70px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;gap:20px}
+h2{font:900 36px/1.2 Cairo;color:var(--navy)}
+.sub{color:var(--mute)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{padding:8px 16px;border-radius:999px;border:1.5px solid var(--line);font-weight:700;font-size:14px;background:#fff;cursor:pointer}
+.chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.offer{background:#fff;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.offer:hover{transform:translateY(-4px);box-shadow:0 24px 40px -24px rgba(22,36,92,.5)}
+.cover{height:170px;position:relative;padding:14px;display:flex;justify-content:space-between;align-items:flex-start}
+.cover .tag{background:#fff;color:var(--red)}
+.cover .left{background:var(--gold);color:#3b2600}
+.cover h3{position:absolute;bottom:12px;right:16px;color:#fff;font:900 28px Cairo;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.cover h3 small{display:block;font:600 13px "Readex Pro";letter-spacing:1px;opacity:.9}
+.body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:12px;flex:1}
+.meta{display:flex;gap:14px;font-size:14px;color:var(--mute);font-weight:600}
+.inc{display:flex;flex-wrap:wrap;gap:6px}
+.inc span{background:var(--sand);border-radius:8px;padding:3px 9px;font-size:13px;font-weight:600}
+.price{display:flex;justify-content:space-between;align-items:center;margin-top:auto;border-top:1px dashed var(--line);padding-top:12px}
+.price small{color:var(--mute);font-size:12px;display:block}
+.price b{font:700 22px "Readex Pro";color:var(--navy)}
+.price .btn{padding:10px 16px;font-size:14px}
+.c-ist{background:linear-gradient(150deg,#F2A65A,#C2452D 60%,#6B1E2E)}
+.c-shr{background:linear-gradient(150deg,#F7D58B,#E0A048 50%,#1A7A8C)}
+.c-mys{background:linear-gradient(150deg,#86D3F5,#2E7BC4 55%,#13306E)}
+.c-tun{background:linear-gradient(150deg,#BFE7FF,#3FA0D9 50%,#F2F2F2)}
+.c-bal{background:linear-gradient(150deg,#9BE15D,#1C8F6A 55%,#0D4A3E)}
+.c-dxb{background:linear-gradient(150deg,#FFD9A0,#D8894A 50%,#3A2C5C)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{background:#fff;border-radius:var(--r);padding:22px;border:1px solid var(--line)}
+.step i{font-style:normal;display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--navy);color:#fff;font:700 18px "Readex Pro";margin-bottom:12px}
+.step h4{font-size:18px;color:var(--navy);margin-bottom:4px}
+.step p{font-size:15px;color:var(--mute)}
+
+/* omra */
+.omra{background:var(--navy);color:#fff;border-radius:28px;padding:44px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;position:relative;overflow:hidden}
+.omra::after{content:"";position:absolute;left:-80px;bottom:-80px;width:320px;height:320px;border-radius:50%;border:40px solid rgba(255,255,255,.05)}
+.omra h2{color:#fff}
+.omra .sub{color:#C7CDEA;margin:10px 0 20px}
+.tiers{display:grid;gap:12px;position:relative;z-index:1}
+.tier{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center}
+.tier b{font:700 20px "Readex Pro"}
+.tier small{display:block;color:#C7CDEA;font-size:13px}
+.tier.best{background:#fff;color:var(--navy)}
+.tier.best small{color:var(--mute)}
+.ticks{list-style:none;display:grid;gap:8px}
+.ticks li::before{content:"✓";color:var(--gold);font-weight:900;margin-inline-end:8px}
+
+/* visa + reviews */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.card{background:#fff;border-radius:var(--r);padding:26px;border:1px solid var(--line)}
+.visa-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.visa-list div{background:var(--sand);border-radius:12px;padding:10px 12px;font-weight:700;font-size:15px;display:flex;justify-content:space-between}
+.visa-list small{color:var(--sea);font-weight:700}
+.review{border-bottom:1px solid var(--line);padding:14px 0}
+.review:last-child{border:0}
+.stars{color:var(--gold);letter-spacing:2px}
+.review p{font-size:15px}
+.review small{color:var(--mute);font-weight:700}
+
+/* cta + footer */
+.cta{background:var(--red);color:#fff;border-radius:28px;padding:40px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.cta h2{color:#fff}
+footer{padding:40px 0 100px;color:var(--mute);font-size:14px}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;border-top:1px solid var(--line);padding-top:24px}
+.mbar{display:none}
+
+@media (max-width:900px){
+  .nav ul,.nav .end .btn-ghost{display:none}
+  .hero-grid,.omra,.two{grid-template-columns:1fr}
+  h1{font-size:38px}
+  .hero-art{height:300px}
+  .p1{inset:0 0 70px 90px}.p2{width:150px;height:170px}.p3{width:130px;height:100px}
+  .search{grid-template-columns:1fr 1fr}
+  .search .field:first-child{grid-column:1/-1}
+  .search .btn{grid-column:1/-1;height:52px;justify-content:center}
+  .offers{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .head{flex-direction:column;align-items:flex-start}
+  h2{font-size:28px}
+  .omra,.cta{padding:28px}
+  .cta{flex-direction:column;align-items:flex-start}
+  .mbar{display:flex;position:fixed;bottom:0;left:0;right:0;gap:8px;padding:10px;background:#fff;border-top:1px solid var(--line);z-index:30}
+  .mbar .btn{flex:1;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><span class="logo-mark">T</span><span><b>TUNAROZ</b><small>VOYAGE</small></span></a>
+    <ul>
+      <li><a href="#offers">العروض</a></li>
+      <li><a href="#omra">عمرة وحج</a></li>
+      <li><a href="#visa">التأشيرات</a></li>
+      <li><a href="#how">كيفاش نخدمو</a></li>
+      <li><a href="#contact">اتصل بنا</a></li>
+    </ul>
+    <div class="end">
+      <span class="lang">FR · ع</span>
+      <a class="btn btn-ghost" href="tel:+213">📞 اتصل</a>
+      <a class="btn btn-wa" href="#">واتساب</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div class="hero-grid">
+      <div>
+        <div class="kicker">✈ وكالة سياحية معتمدة · Vayagez, Découvrez, Rêvez</div>
+        <h1>رحلتك جاهزة<br><em>بالتذكرة، الفندق والفيزا</em><br>في عرض واحد.</h1>
+        <p class="lead">اختار الوجهة والشهر، نبعثولك السعر النهائي فالواتساب في أقل من 30 دقيقة. بلا مصاريف مخبية.</p>
+        <div class="trust">
+          <div><b>+12</b>سنة خبرة</div>
+          <div><b>+8 000</b>مسافر</div>
+          <div><b>4.9★</b>تقييم Google</div>
+          <div><b>98%</b>نسبة قبول الفيزا</div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="pic p1"><span>📍 إسطنبول</span></div>
+        <div class="pic p2"><span>📍 شرم الشيخ</span></div>
+        <div class="pic p3"><span>📍 بالي</span></div>
+        <div class="badge-float">عرض الأسبوع<b>إسطنبول 7 ليالي</b>من 129 000 دج</div>
+      </div>
+    </div>
+
+    <form class="search" onsubmit="return false">
+      <div class="field"><label>وين حاب تسافر؟</label>
+        <select><option>كل الوجهات</option><option>إسطنبول</option><option>شرم الشيخ</option><option>تونس</option><option>ماليزيا</option><option>بالي</option><option>دبي</option><option>عمرة</option></select></div>
+      <div class="field"><label>الشهر</label>
+        <select><option>ديسمبر 2026</option><option>جانفي 2027</option><option>فيفري 2027</option><option>مارس 2027</option></select></div>
+      <div class="field"><label>المسافرين</label>
+        <select><option>2 كبار</option><option>1 كبير</option><option>2 كبار + 1 طفل</option><option>عائلة (4+)</option></select></div>
+      <div class="field"><label>الميزانية للفرد</label>
+        <select><option>كل الميزانيات</option><option>أقل من 100 000 دج</option><option>100 – 200 000 دج</option><option>+200 000 دج</option></select></div>
+      <button class="btn btn-red">شوف العروض ←</button>
+    </form>
+  </div>
+
+  <section id="offers">
+    <div class="wrap">
+      <div class="head">
+        <div><h2>عروض الشهر</h2><p class="sub">أسعار نهائية للفرد، في غرفة مزدوجة. المقاعد محدودة.</p></div>
+        <div class="chips"><span class="chip on">الكل</span><span class="chip">شهر العسل</span><span class="chip">عائلات</span><span class="chip">بلا فيزا</span><span class="chip">رأس السنة</span></div>
+      </div>
+      <div class="offers">
+        <article class="offer"><div class="cover c-ist"><span class="tag">الأكثر طلباً</span><span class="tag left">بقاو 6 مقاعد</span><h3><small>ISTANBUL</small>إسطنبول</h3></div>
+          <div class="body"><div class="meta"><span>🗓 7 ليالي</span><span>✈ 12 ديسمبر</span><span>🏨 4★</span></div>
+          <div class="inc"><span>تذكرة</span><span>فندق + فطور</span><span>نقل المطار</span><span>جولة البوسفور</span></div>
+          <div class="price"><div><small>ابتداءً من</small><b>129 000 دج</b></div><a class="btn btn-red" href="#">احجز</a></div></div></article>
+
+        <article class="offer"><div class="cover c-shr"><span class="tag">كل شيء مدفوع</span><span class="tag left">بقاو 4 مقاعد</span><h3><small>SHARM EL SHEIKH</small>شرم الشيخ</h3></div>
+          <div class="body"><div class="meta"><span>🗓 8 ليالي</span><span>✈ 20 ديسمبر</span><span>🏨 5★</span></div>
+          <div class="inc"><span>تذكرة</span><span>All inclusive</span><span>فيزا عند الوصول</span><span>رحلة بحرية</span></div>
+          <div class="price"><div><small>ابتداءً من</small><b>165 000 دج</b></div><a class="btn btn-red" href="#">احجز</a></div></div></article>
+
+        <article class="offer"><div class="cover c-mys"><span class="tag">شهر العسل</span><span></span><h3><small>MALAYSIA</small>ماليزيا</h3></div>
+          <div class="body"><div class="meta"><span>🗓 10 ليالي</span><span>✈ 5 جانفي</span><span>🏨 4★</span></div>
+          <div class="inc"><span>تذكرة</span><span>كوالالمبور + لنكاوي</span><span>بلا فيزا</span><span>جولات</span></div>
+          <div class="price"><div><small>ابتداءً من</small><b>239 000 دج</b></div><a class="btn btn-red" href="#">احجز</a></div></div></article>
+
+        <article class="offer"><div class="cover c-tun"><span class="tag">بالسيارة أو الطيارة</span><span></span><h3><small>TUNISIE</small>تونس</h3></div>
+          <div class="body"><div class="meta"><span>🗓 5 ليالي</span><span>🚌 كل خميس</span><span>🏨 4★</span></div>
+          <div class="inc"><span>نقل</span><span>فندق نصف إقامة</span><span>الحمامات · سوسة</span></div>
+          <div class="price"><div><small>ابتداءً من</small><b>58 000 دج</b></div><a class="btn btn-red" href="#">احجز</a></div></div></article>
+
+        <article class="offer"><div class="cover c-bal"><span class="tag">جديد</span><span></span><h3><small>BALI</small>بالي</h3></div>
+          <div class="body"><div class="meta"><span>🗓 9 ليالي</span><span>✈ 15 فيفري</span><span>🏨 فيلا</span></div>
+          <div class="inc"><span>تذكرة</span><span>فيلا بمسبح</span><span>أوبود + نوسا دوا</span></div>
+          <div class="price"><div><small>ابتداءً من</small><b>289 000 دج</b></div><a class="btn btn-red" href="#">احجز</a></div></div></article>
+
+        <article class="offer"><div class="cover c-dxb"><span class="tag">رأس السنة</span><span class="tag left">بقاو 3 مقاعد</span><h3><small>DUBAI</small>دبي</h3></div>
+          <div class="body"><div class="meta"><span>🗓 6 ليالي</span><span>✈ 28 ديسمبر</span><span>🏨 4★</span></div>
+          <div class="inc"><span>تذكرة</span><span>فيزا</span><span>سفاري الصحراء</span><span>ألعاب نارية</span></div>
+          <div class="price"><div><small>ابتداءً من</small><b>215 000 دج</b></div><a class="btn btn-red" href="#">احجز</a></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><div><h2>كيفاش تحجز فـ 4 خطوات</h2><p class="sub">من الدار، بلا ما تتنقل للوكالة.</p></div></div>
+      <div class="steps">
+        <div class="step"><i>1</i><h4>اختار العرض</h4><p>ولا قولنا الميزانية ونقترحولك.</p></div>
+        <div class="step"><i>2</i><h4>ابعث الوثائق</h4><p>صورة الباسبور فالواتساب، والباقي علينا.</p></div>
+        <div class="step"><i>3</i><h4>عربون 30%</h4><p>CCP، BaridiMob ولا فالوكالة. وصل رسمي.</p></div>
+        <div class="step"><i>4</i><h4>سافر مرتاح</h4><p>مرافق 24/24 فالواتساب طول الرحلة.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="omra" style="padding-top:0">
+    <div class="wrap">
+      <div class="omra">
+        <div>
+          <h2>عمرة 2027 — برامج واضحة، بلا مفاجآت</h2>
+          <p class="sub">مرافق ديني جزائري من البداية للنهاية، وفنادق قريبة من الحرم.</p>
+          <ul class="ticks">
+            <li>تذكرة مباشرة من الجزائر، قسنطينة ووهران</li>
+            <li>التأشيرة والتأمين محسوبين فالسعر</li>
+            <li>زيارة المدينة المنورة والمزارات</li>
+            <li>دفع بالتقسيط على 3 أشهر</li>
+          </ul>
+        </div>
+        <div class="tiers">
+          <div class="tier"><div><b>اقتصادية</b><small>15 يوم · فندق 800م من الحرم</small></div><b>219 000 دج</b></div>
+          <div class="tier best"><div><b>مريحة ★</b><small>15 يوم · فندق 300م · فطور</small></div><b>289 000 دج</b></div>
+          <div class="tier"><div><b>VIP</b><small>15 يوم · إطلالة على الحرم</small></div><b>420 000 دج</b></div>
+          <a class="btn btn-red" href="#" style="justify-content:center">احجز مكانك للعمرة</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="visa" style="padding-top:0">
+    <div class="wrap two">
+      <div class="card">
+        <h2 style="font-size:28px">ملفات التأشيرة</h2>
+        <p class="sub">نحضرولك الملف كامل ونتابعو الموعد.</p>
+        <div class="visa-list">
+          <div>شنغن 🇪🇺 <small>من 15 يوم</small></div>
+          <div>تركيا 🇹🇷 <small>e-Visa · 48سا</small></div>
+          <div>الإمارات 🇦🇪 <small>4 أيام</small></div>
+          <div>مصر 🇪🇬 <small>عند الوصول</small></div>
+          <div>ماليزيا 🇲🇾 <small>بلا فيزا</small></div>
+          <div>كندا 🇨🇦 <small>ملف كامل</small></div>
+        </div>
+      </div>
+      <div class="card">
+        <h2 style="font-size:28px">واش قالو المسافرين</h2>
+        <div class="review"><div class="stars">★★★★★</div><p>كلش كان منظم، من المطار حتى الفندق. نعاودو معاهم الصيف.</p><small>عائلة من سطيف · إسطنبول</small></div>
+        <div class="review"><div class="stars">★★★★★</div><p>شهر العسل في ماليزيا خرج أحسن من اللي تخيلناه.</p><small>عرسان من البليدة · ماليزيا</small></div>
+        <div class="review"><div class="stars">★★★★★</div><p>عمرة مريحة والمرافق كان في الخدمة ليل ونهار.</p><small>حاج من وهران · عمرة</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top:0">
+    <div class="wrap">
+      <div class="cta">
+        <div><h2>ما لقيتش الرحلة اللي حابها؟</h2><p>قولنا الوجهة والميزانية، نصممولك برنامج خاص في نفس اليوم.</p></div>
+        <a class="btn btn-ghost" href="#" style="font-size:18px;padding:16px 28px">💬 اكتبلنا فالواتساب</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div><b style="color:var(--navy)">TUNAROZ VOYAGE</b> · رخصة وكالة سياحة وأسفار رقم ……</div>
+    <div>العنوان · الهاتف · Facebook · Instagram · TikTok · YouTube</div>
+  </div>
+</footer>
+
+<div class="mbar"><a class="btn btn-ghost" href="#">📞 اتصل</a><a class="btn btn-wa" href="#">💬 واتساب</a></div>
+</body>
+</html>
