@@ -17,4 +17,21 @@
   document.querySelectorAll(".l55-order").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();var b=codButton();if(b){b.click();return;}var f=document.querySelector("form[action*=\"/cart/add\"]");if(f)f.scrollIntoView({behavior:"smooth",block:"center"});});});
 })();
 
+  // The template keeps the old inline order block (.aglo, holds the Releasit form): show the new offer there,
+  // and send every order button to it.
+  function fixOrderBlock(){
+    var o=document.querySelector(".aglo"); if(!o) return false;
+    var w=document.createTreeWalker(o,NodeFilter.SHOW_TEXT),n;
+    while((n=w.nextNode())){
+      var t=n.nodeValue;
+      t=t.replace(/11s?000s*دج/g,"55 000 دج").replace(/11000/g,"55 000");
+      t=t.replace("برنامج تسيير وكالات السفر","le système + مولّد الـ site web");
+      t=t.replace("كل الخدمات · مدى الحياة · بلا اشتراك","كل الخدمات · مدى الحياة · نركّبوه في الوكالة ونعلّموك");
+      if(t!==n.nodeValue) n.nodeValue=t;
+    }
+    return true;
+  }
+  if(!fixOrderBlock()){document.addEventListener("DOMContentLoaded",fixOrderBlock);}
+  setTimeout(fixOrderBlock,1500);
+  document.querySelectorAll(".l55-order").forEach(function(a){a.addEventListener("click",function(e){var o=document.querySelector(".aglo");if(o){e.preventDefault();e.stopImmediatePropagation();o.scrollIntoView({behavior:"smooth",block:"start"});}},true);});
 })();
