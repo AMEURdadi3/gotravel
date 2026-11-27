@@ -24,7 +24,7 @@
     var w=document.createTreeWalker(o,NodeFilter.SHOW_TEXT),n;
     while((n=w.nextNode())){
       var t=n.nodeValue;
-      t=t.replace(/11s?000s*دج/g,"⁦55 000⁩ دج").replace(/11000/g,"⁦55 000⁩");
+      t=t.replace(/11\s?000\s*دج/g,"⁦55 000⁩ دج").replace(/11000/g,"⁦55 000⁩");
       t=t.replace("برنامج تسيير وكالات السفر","le système + مولّد الـ site web");
       t=t.replace("كل الخدمات · مدى الحياة · بلا اشتراك","كل الخدمات · مدى الحياة · نركّبوه في الوكالة ونعلّموك");
       if(t!==n.nodeValue) n.nodeValue=t;
