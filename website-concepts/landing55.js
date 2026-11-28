@@ -35,5 +35,5 @@
   }
   if(!fixOrderBlock()){document.addEventListener("DOMContentLoaded",fixOrderBlock);}
   setTimeout(fixOrderBlock,1500);
-  document.querySelectorAll(".l55-order").forEach(function(a){a.addEventListener("click",function(e){var o=document.querySelector(".aglo");if(o){e.preventDefault();e.stopImmediatePropagation();o.scrollIntoView({behavior:"smooth",block:"start"});[800,1600,2600].forEach(function(t){setTimeout(function(){if(Math.abs(o.getBoundingClientRect().top)>40)o.scrollIntoView({behavior:"smooth",block:"start"});},t);});}},true);});
+  document.querySelectorAll(".l55-order").forEach(function(a){a.addEventListener("click",function(e){var o=document.querySelector(".aglo");if(!o){e.preventDefault();e.stopImmediatePropagation();location.href="/products/"+encodeURIComponent("برنامج-تسيير-وكالات-السفر-site-web");return;}if(o){e.preventDefault();e.stopImmediatePropagation();o.scrollIntoView({behavior:"smooth",block:"start"});[800,1600,2600].forEach(function(t){setTimeout(function(){if(Math.abs(o.getBoundingClientRect().top)>40)o.scrollIntoView({behavior:"smooth",block:"start"});},t);});}},true);});
 })();
